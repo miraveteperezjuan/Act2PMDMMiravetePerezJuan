@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivStoreLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/svProducts"
+        android:src="@drawable/logozara"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/svProducts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.13"
+        android:background="@color/light_gray" />
+
+    <LinearLayout
+        android:id="@+id/Categories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/svProducts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnMensClothing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/hombre"
+            android:backgroundTint="@color/dark_gray"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnWomensClothing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/mujer"
+            android:backgroundTint="@color/dark_gray"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnJewelery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/joyas"
+            android:backgroundTint="@color/dark_gray"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnElectronics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:textSize="12sp"
+            android:text="@string/electronica"
+            android:backgroundTint="@color/dark_gray"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <!-- Botones adicionales -->
+    <LinearLayout
+        android:id="@+id/llAdditionalButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/Categories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnShowAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/todos"
+            android:backgroundTint="@color/dark_gray"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnSortByPriceAsc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="@string/precio"
+            android:backgroundTint="@color/dark_gray"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProducts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/llAdditionalButtons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

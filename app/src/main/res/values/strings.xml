@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Act2-MiravetePerezdelCorralJuan</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="joyas">Joyería</string>
+    <string name="electronica">Electrónica</string>
+    <string name="todos">Mostrar todos</string>
+    <string name="precio">Ordenar por precio</string>
+</resources>
