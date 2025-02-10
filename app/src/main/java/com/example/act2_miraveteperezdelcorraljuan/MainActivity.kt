@@ -26,26 +26,17 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         setContentView(binding.root)
         fetchProducts()
         displayProducts()
-        categoryButtons()
-        setupAdditionalButtons()
+        buttons()
         binding.svProducts.setOnQueryTextListener(this)
     }
 
-    private fun setupAdditionalButtons() {
+    private fun buttons() {
         binding.btnShowAll.setOnClickListener {
             adapter.updateProducts(productList)
         }
         binding.btnDescendente.setOnClickListener {
             sortByPriceDescending()
         }
-    }
-
-    private fun sortByPriceDescending() {
-        val sortedList = productList.sortedBy { it.price }
-        adapter.updateProducts(sortedList)
-    }
-
-    private fun categoryButtons() {
         binding.btnMensClothing.setOnClickListener {
             filterByCategory("men's clothing")
         }
@@ -58,6 +49,11 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         binding.btnWomensClothing.setOnClickListener {
             filterByCategory("women's clothing")
         }
+    }
+
+    private fun sortByPriceDescending() {
+        val sortedList = productList.sortedBy { it.price }
+        adapter.updateProducts(sortedList)
     }
 
     private fun filterByCategory(category: String) {

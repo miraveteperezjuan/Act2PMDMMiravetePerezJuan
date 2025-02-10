@@ -13,9 +13,9 @@ class ProductsViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     fun bind(products: Products){
         Picasso.get().load(products.image).into(binding.ivProduct)
-        binding.tvTitle.setText(Html.fromHtml("<b>" + products.title + "</b>", Html.FROM_HTML_MODE_LEGACY));
+        binding.tvTitle.setText(products.title);
         binding.tvDescription.setText(products.description)
-        binding.tvPrice.setText(Html.fromHtml("<b>" + products.price + " EUR</b>", Html.FROM_HTML_MODE_LEGACY));
+        binding.tvPrice.setText(Html.fromHtml("<b>" + products.price + "<b> EUR</b>", Html.FROM_HTML_MODE_LEGACY));
     }
 
 
