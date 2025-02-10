@@ -27,7 +27,22 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         fetchProducts()
         displayProducts()
         categoryButtons()
+        setupAdditionalButtons()
         binding.svProducts.setOnQueryTextListener(this)
+    }
+
+    private fun setupAdditionalButtons() {
+        binding.btnShowAll.setOnClickListener {
+            adapter.updateProducts(productList)
+        }
+        binding.btnDescendente.setOnClickListener {
+            sortByPriceDescending()
+        }
+    }
+
+    private fun sortByPriceDescending() {
+        val sortedList = productList.sortedBy { it.price }
+        adapter.updateProducts(sortedList)
     }
 
     private fun categoryButtons() {

@@ -79,7 +79,6 @@
 
     </LinearLayout>
 
-    <!-- Botones adicionales -->
     <LinearLayout
         android:id="@+id/llAdditionalButtons"
         android:layout_width="0dp"
@@ -100,7 +99,7 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/btnSortByPriceAsc"
+            android:id="@+id/btnDescendente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
